@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import edu.first.mvvmshopping.R
 import edu.first.mvvmshopping.data.db.entities.ShoppingDatabase
 import edu.first.mvvmshopping.data.db.entities.ShoppingItem
@@ -37,6 +39,13 @@ class ShopActivity : AppCompatActivity() ,KodeinAware {
             adapter.items=it
             adapter.notifyDataSetChanged()
         })
+        val swipeGesture= object :SwipeGesture(){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+
+            }
+        }
+        val touchHelper = ItemTouchHelper(swipeGesture)
+        touchHelper.attachToRecyclerView(rvShoppingItems)
 
         fab.setOnClickListener{
             AddItemDialog(this,

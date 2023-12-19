@@ -14,6 +14,10 @@ class ShoppingItemAdapter(
     private val viewModel: ShoppingViewModel
 ) : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingViewHolder>(){
 
+    fun deleteItem(i :Int){
+        viewModel.delete(items[i])
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoppingViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.shoppingitem,parent,false)
         return ShoppingViewHolder(view)
@@ -24,9 +28,9 @@ class ShoppingItemAdapter(
         holder.itemView.tvName.text= currPos.name
         holder.itemView.tvAmount.text= "${currPos.amount}"
 
-        holder.itemView.ivDelete.setOnClickListener{
-            viewModel.delete(currPos)
-        }
+//        holder.itemView.ivDelete.setOnClickListener{
+//            viewModel.delete(currPos)
+//        }
         holder.itemView.ivPlus.setOnClickListener{
             currPos.amount++
             viewModel.upsert(currPos)
