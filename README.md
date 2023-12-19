@@ -16,7 +16,7 @@ Features:
 Model :
 
 <p float="middle">
-    <img src="mvvmShop2.gif" width="300">
+    <img src="mvvmShop2.png" width="300">
 </p>
 
 Great Help:
