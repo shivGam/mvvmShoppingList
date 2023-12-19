@@ -41,7 +41,11 @@ class ShopActivity : AppCompatActivity() ,KodeinAware {
         })
         val swipeGesture= object :SwipeGesture(){
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-
+                when(direction){
+                    ItemTouchHelper.LEFT->{
+                        adapter.deleteItem(viewHolder.adapterPosition)
+                    }
+                }
             }
         }
         val touchHelper = ItemTouchHelper(swipeGesture)
