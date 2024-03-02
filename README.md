@@ -13,11 +13,5 @@ Features:
 - Practiced Dependency Injection with Kodein
 - Added Swipe to delete Gesture
 
-Model :
-
-<p float="middle">
-    <img src="mvvmShop2.png" width="600">
-</p>
-
 Great Help:
 [Philip Lackner](https://www.youtube.com/@PhilippLackner)
